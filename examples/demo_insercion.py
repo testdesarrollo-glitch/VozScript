@@ -5,9 +5,12 @@ import json
 # Asegurar que Python pueda encontrar el módulo src si se ejecuta desde diferentes carpetas
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 
-# Importar las funciones que creaste en tu librería
-from src.stt_formatter.audio_capture import transcribe_audio
-from src.stt_formatter.formatter import sumarize_corpus, generate_json_from_corpus
+# Así llamas a tus funciones ahora que es una librería
+from stt_formatter.audio_capture import transcribe_audio
+from stt_formatter.formatter import sumarize_corpus, generate_json_from_corpus
+
+# Prueba rápida para ver si encuentra la función
+print("¡Librería importada correctamente!")
 
 def ejecutar_demo():
     print("=" * 60)
@@ -16,7 +19,7 @@ def ejecutar_demo():
 
     # 1. Definir rutas (Se recomienda usar un archivo .wav de prueba dentro del proyecto)
     # Reemplaza 'audio_test.wav' con el nombre real de tu archivo de pruebas
-    ruta_audio = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../Grabación-_2_.wav'))
+    ruta_audio = os.path.abspath(os.path.join(os.path.dirname(__file__), '../assets/Grabación-_2_.wav'))
     
     if not os.path.exists(ruta_audio):
         print(f"\n[⚠️ Alerta]: No se encontró el archivo de prueba en: {ruta_audio}")

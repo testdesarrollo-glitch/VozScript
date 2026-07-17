@@ -16,4 +16,6 @@ RUN pip install -r requirements.txt
 
 COPY . /app/
 
+RUN pip install -e .
+
 CMD ["python", "examples/demo_insercion.py"]
